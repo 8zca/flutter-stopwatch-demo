@@ -1,8 +1,11 @@
 # stopwatchdemo
 
-flutter stopwatch demo
+flutter + provider + sqlite  demo
 
-flutter + provider + sqlite 
+## screenshot
+
+![image](https://user-images.githubusercontent.com/5304269/88458845-d1194a80-cecb-11ea-9e8e-21368d56180a.png)
+
 
 ## Getting Started
 
