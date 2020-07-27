@@ -4,7 +4,7 @@ flutter + provider + sqlite  demo
 
 ## screenshot
 
-![image](https://user-images.githubusercontent.com/5304269/88458845-d1194a80-cecb-11ea-9e8e-21368d56180a.png)
+![image](https://user-images.githubusercontent.com/5304269/88549949-e8873d80-d05b-11ea-9a0f-b941dc771bdd.png)
 
 
 ## Getting Started
