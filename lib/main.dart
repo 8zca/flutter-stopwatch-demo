@@ -109,56 +109,79 @@ class _ChildContent extends StatelessWidget {
 
     return Container(
       height: 250,
-      padding: EdgeInsets.only(
-        top: 32,
+      margin: EdgeInsets.only(
+        top: 20
       ),
       child: Card(
-        elevation: 0,
+        elevation: 1,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4)),
-        color: const Color(0xff2c4260),
-        child: BarChart(
-          BarChartData(
-            alignment: BarChartAlignment.spaceAround,
-            maxY: 20,
-            barTouchData: BarTouchData(
-              enabled: false,
-              touchTooltipData: BarTouchTooltipData(
-                tooltipBgColor: Colors.transparent,
-                tooltipPadding: const EdgeInsets.all(0),
-                tooltipBottomMargin: 8,
-                getTooltipItem: (
-                  BarChartGroupData group,
-                  int groupIndex,
-                  BarChartRodData rod,
-                  int rodIndex,
-                ) {
-                  return BarTooltipItem(
-                    rod.y.round().toString(),
-                    TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  );
-                },
-              )
-            ),
-            titlesData: FlTitlesData(
-              show: true,
-              bottomTitles: SideTitles(
-                showTitles: true,
-                textStyle: TextStyle(
-                    color: const Color(0xff7589a2), fontWeight: FontWeight.bold, fontSize: 14),
-                margin: 20,
-                getTitles: (double value) {
-                  return value.toString();
-                }
+        child: Padding(
+          padding: EdgeInsets.only(top: 20),
+          child: BarChart(
+            BarChartData(
+              alignment: BarChartAlignment.spaceAround,
+              maxY: 20,
+              barTouchData: BarTouchData(
+                enabled: false,
+                touchTooltipData: BarTouchTooltipData(
+                  tooltipBgColor: Colors.transparent,
+                  tooltipPadding: const EdgeInsets.all(0),
+                  tooltipBottomMargin: 8,
+                  getTooltipItem: (
+                    BarChartGroupData group,
+                    int groupIndex,
+                    BarChartRodData rod,
+                    int rodIndex,
+                  ) {
+                    return BarTooltipItem(
+                      rod.y.round().toString(),
+                      TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    );
+                  },
+                )
               ),
-              leftTitles: SideTitles(showTitles: false),
-            ),
-            borderData: FlBorderData(
-              show: false,
-            ),
-            barGroups: barData
+              titlesData: FlTitlesData(
+                show: true,
+                bottomTitles: SideTitles(
+                  showTitles: true,
+                  textStyle: TextStyle(
+                      color: const Color(0xff7589a2), fontWeight: FontWeight.bold, fontSize: 14),
+                  margin: 20,
+                  getTitles: (double value) {
+                    return value.toString();
+                  }
+                ),
+                leftTitles: SideTitles(
+                  showTitles: true,
+                  interval: 2,
+                  textStyle: const TextStyle(
+                      color: Color(
+                        0xff939393,
+                      ),
+                      fontSize: 10),
+                  margin: 0,
+                ),
+                topTitles: SideTitles(
+                  margin: 20,
+                  showTitles: false
+                )
+              ),
+              gridData: FlGridData(
+                show: true,
+                checkToShowHorizontalLine: (value) => value % 2 == 0,
+                getDrawingHorizontalLine: (value) => FlLine(
+                  color: const Color(0xffe7e8ec),
+                  strokeWidth: 1,
+                ),
+              ),
+              borderData: FlBorderData(
+                show: false,
+              ),
+              barGroups: barData            
+            )
           )
         )
       )
